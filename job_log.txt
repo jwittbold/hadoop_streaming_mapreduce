@@ -1,0 +1,2 @@
+packageJobJar: [autoinc_mapper1.py, autoinc_reducer1.py] [] /var/folders/_r/knz5xdzs0vq229f2fm1l5lfh0000gn/T/streamjob2400614465797618933.jar tmpDir=null
+packageJobJar: [autoinc_mapper2.py, autoinc_reducer2.py] [] /var/folders/_r/knz5xdzs0vq229f2fm1l5lfh0000gn/T/streamjob2699827997348848515.jar tmpDir=null
