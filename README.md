@@ -73,5 +73,29 @@ Now that we have our working directories, we must add our data.csv file to HDFS.
 
 ```hdfs dfs -put data.csv /input```
 
+With our directories created and data file loaded into HDFS, we can run the ```vehicle_mapreduce.sh``` script to run the streaming MapReduce jobs. 
+Note that you may need to specify a different path according to where your 'hadoop-streaming-x.x.x.jar' file exists. I am using a Homebrew install of Hadoop, and found file here:  
+```/usr/local/Cellar/hadoop/3.3.0/libexec/share/hadoop/tools/lib/hadoop-streaming-3.3.0.jar```
+
+Now to run the job simply input:  
+
+```sh vehicle_mapreduce.sh```
+
+Two new directories will have been created within the HDFS /output directory, ```/output/all_accidents``` containing the file created from the first MapReduce job,  and ```/output/make_year_count```, containing the file created from the second MapReduce job.  
+
+Within each of these directories a new HDFS file will have been created, called ```part-00000```.
+
+To view the output after our first MapReduce job we can enter:  
+```hdfs dfs -cat /output/all_accidents/part-00000```
+Showing the resulting file:  
+![MapReduce 1 Output](/screenshots/map_reduce_1_all_accidents_output.png)
+
+To view the final output from the two MapRedude jobs we can enter:  
+```hdfs dfs -cat /output/make_year_count/part-00000```
+
+As you can see, the result is 
+![Final Output](/screenshots/final_output_hdfs.png)
+
+
 
 
