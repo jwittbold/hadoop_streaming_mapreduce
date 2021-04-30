@@ -98,7 +98,3 @@ To view the final output from the two MapRedude jobs we can enter:
 
 As you can see, the result is:  
 ![Final Output](/screenshots/final_output_hdfs.png)
-
-
-
-
