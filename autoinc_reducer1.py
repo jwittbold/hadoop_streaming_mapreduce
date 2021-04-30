@@ -48,7 +48,7 @@ for line in sys.stdin:
     # convert string to tuple 
     vehicle_info = eval(col_val[1])
 
-    # adds vin as key to master_dict if incident_type = 'I'
+    # adds vin as key to master_dict if incident_type is 'I'
     incident = vehicle_info[0]
     if incident == 'I':
         master_dict[vin] = vehicle_info
