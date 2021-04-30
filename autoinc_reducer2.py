@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 
-# master key and 
+# master key and count
 current_key = None
 output_lst = []
 
