@@ -76,7 +76,8 @@ Now that we have our working directories, we must add our data.csv file to HDFS.
 
 With our directories created and data file loaded into HDFS, we can run the ```vehicle_mapreduce.sh``` script to execute the streaming MapReduce jobs.  
 
-Note that you may need to specify a different path in ```vehichle_mapreduce.sh``` according to where your 'hadoop-streaming-x.x.x.jar' file exists.  
+*Note that you may need to specify a different path in ```vehichle_mapreduce.sh``` according to where your 'hadoop-streaming-x.x.x.jar' file exists.  
+
 I am using a Homebrew install of Hadoop, and located the jar file here:  
 ```/usr/local/Cellar/hadoop/3.3.0/libexec/share/hadoop/tools/lib/hadoop-streaming-3.3.0.jar```
 
