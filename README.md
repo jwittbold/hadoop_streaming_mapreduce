@@ -99,9 +99,13 @@ To view the final output from the two MapRedude jobs we can enter:
 As you can see, the final result is:  
 ![Final Output](/screenshots/map_reduce_2_make_year_count_output.png)
 
-```vehicle_mapreduce.sh``` also creates an additional file called ```job_log.txt``` which shows two 'packageJobJar' events. This captures job execution to STDOUT and confirms that our MapReduce jobs have run successfully.  
+```vehicle_mapreduce.sh``` also creates an additional file called ```job_log.txt``` which shows two 'packageJobJar' events.  
+This captures job execution from STDOUT and confirms that our MapReduce jobs have run successfully.  
 
-For a more verbose log, you can uncomment line 3 in ```vehichle_mapreduce.sh``` this will send all STDOUT and STDERR to the created file ```job_log.txt```.  
-I have no included it here as it will reveal local file paths and usernames. 
+
+For a more verbose log, you can uncomment line 3 in ```vehichle_mapreduce.sh```  
+
+This will send all STDOUT and STDERR to the created file ```job_log.txt```.  
+I have not included it here as it will reveal local file paths and usernames. 
 
 
