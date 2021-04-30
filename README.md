@@ -50,16 +50,16 @@ https://www.youtube.com/watch?v=735yx2Eak48
 The following assumes you are up and running with Hadoop.
 ### Input file to HDFS
 We will first need to load our file into the Hadoop File System, as well as create the directories in which to access and write our MapReduce jobs. If you followed the OS X Hadoop tutorial above, you may have already created the 'input' directory, otherwise, create it now by running:
-```hdfs dfs -mkdir /input```
+  ```hdfs dfs -mkdir /input```
 
 While we are at it, we can create our output directory:
-```hdfs dfa -mkdir /output```
+  ```hdfs dfa -mkdir /output```
 
 We can confirm that we have successfully created our directories with:
-```hdfs dfs -ls /```
+  ```hdfs dfs -ls /```
 
 Now that we have our working directories, we must add our data.csv file to HDFS. We can easily accomplish this with:
-```hdfs dfs -put data.csv /input```
+  ```hdfs dfs -put data.csv /input```
 
 
 
