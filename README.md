@@ -11,7 +11,8 @@ First ```autoinc_mapper1.py``` reads the lines contained within data.csv and map
 
 ```cat data.csv | python autoinc_mapper1.py | sort```
 
-Our output should look like this:
+Our output should look like this:  
+
 ![Mapper1 Output](/screenshots/mapper1_output.png)
 
 
@@ -20,7 +21,8 @@ Once we have our initial set of desired vehicle records, we will pipe these reco
 
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py```
 
-Our output should now only show four 'A' records:
+Our output should now only show four 'A' records:  
+
 ![Reducer1 Output](/screenshots/reducer1_output.png)
 
 Now that we have our desired set of vehicle records, we will pipe these results to our next mapper, ```autoinc_mapper2.py``` which creates a composite key from each vehicle make and year, and a count for each record. We can test this by running:  
@@ -29,7 +31,8 @@ Now that we have our desired set of vehicle records, we will pipe these results 
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py | python autoinc_mapper2.py | sort ```
 
 
-The output will consist of four records: 
+The output will consist of four records:  
+
 ![Mapper2 Output](/screenshots/mapper2_output.png)
 
 
@@ -37,7 +40,8 @@ The final step is to pipe our results to ```autoinc_redcuer2.py``` which will re
 
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py | python autoinc_mapper2.py | sort | python autoinc_reducer2.py | sort```
 
-Our final result should be three records:
+Our final result should be three records:  
+
 ![Reducer2 Output](/screenshots/reducer2_output.png)
 
 
@@ -59,7 +63,7 @@ We will first need to load our file into the Hadoop File System, as well as crea
 
 While we are at it, we can create our output directory:  
 
-```hdfs dfa -mkdir /output```
+```hdfs dfs -mkdir /output```
 
 We can confirm that we have successfully created our directories with:  
 
