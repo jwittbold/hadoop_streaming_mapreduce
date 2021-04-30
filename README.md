@@ -96,5 +96,5 @@ Showing the resulting file:
 To view the final output from the two MapRedude jobs we can enter:  
 ```hdfs dfs -cat /output/make_year_count/part-00000```
 
-As you can see, the result is:  
+As you can see, the final result is:  
 ![Final Output](/screenshots/map_reduce_2_make_year_count_output.png)
