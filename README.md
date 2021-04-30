@@ -85,7 +85,7 @@ Now to run the job simply input:
 
 ```sh vehicle_mapreduce.sh```
 
-Two new directories will have been created within the HDFS /output directory, ```/output/all_accidents``` containing the file created from the first MapReduce job,  and ```/output/make_year_count```, containing the file created from the second MapReduce job.  
+Two new directories will have been created within the HDFS /output directory; ```/output/all_accidents``` containing the file created from the first MapReduce job,  and ```/output/make_year_count```, containing the file created from the second MapReduce job.  
 
 Within each of these directories a new HDFS file will have been created, called ```part-00000```
 
