@@ -7,7 +7,7 @@ The original schema of data.csv stored within HDFS:
 
 Before we run the MapReduce jobs in HDFS we can test the output of our modules using a copy of data.csv stored within the same directory as our modules.  
 
-First ```autoinc_mapper1.py``` reads the lines contained within data.csv and maps the output as a key/value pair, with the vehicle VIN as the key and a tuple containing incident type, make, and year as the value. We can test this within within our terminal by running:  
+First ```autoinc_mapper1.py``` reads the lines contained within data.csv and maps the output as a key/value pair, with the vehicle VIN as the key, and a tuple containing incident type, make, and year as the value. We can test this within within our terminal by running:  
 
 
 ```cat data.csv | python autoinc_mapper1.py | sort```
