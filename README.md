@@ -37,7 +37,7 @@ The output will consist of four records:
 ![Mapper2 Output](/screenshots/mapper2_output.png)
 
 
-The final step is to pipe our results to ```autoinc_redcuer2.py``` which will read in our composite key and count, and return only results for unique keys while increasing the count for duplicate key occurences. We can test this by running:  
+The final step is to pipe our results to ```autoinc_redcuer2.py``` which will read in our composite key and count, and return only results for unique keys while increasing the count for duplicate key occurrences. We can test this by running:  
 
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py | python autoinc_mapper2.py | sort | python autoinc_reducer2.py | sort```
 
