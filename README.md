@@ -1,6 +1,6 @@
 ## Hadoop MapReduce Streaming
 
-This project performs a series of map reduce jobs on a .csv file stored within the Hadoop file system (HDFS). The original .csv file consists of vehicle sales and subsequent incident records for a number of different vehicles. In order to reduce reduncancy in the original data file, not all records contain full vehichle information, only the initial sale record holds vehicle make, model, and year info. The goal of this project is to obtain vehicle make, year and total accident count for vehicles with accident records.
+This project performs a series of map reduce jobs on a .csv file stored within the Hadoop file system (HDFS). The original .csv file consists of vehicle sales and subsequent incident records for a number of different vehicles. In order to reduce reduncancy in the original data file, not all records contain full vehichle information, only the initial sale record holds vehicle make, model, and year info. The goal of this project is to obtain vehicle make, year, and total accident count for vehicles with accident records.
 
 The original schema of data.csv stored within HDFS:
 ![Vehicle Record Schema](/screenshots/vehicle_record_schema.png)
@@ -40,11 +40,26 @@ Our final result should be three records:
 Now that we have tested our MapReduce modules, we can run them as a streaming MapReduce job within Hadoop.
 
 ## Using Hadoop
-To work with the Hadoop File System, you will either need to have it installed on your local machine or alternatively you may run it within a Hortonworks Hadoop Sandbox environment. I am working with a local installation of Hadoop on OS X, and if you're on a Mac and would like to install Hadoop and reproduce this project, here is a straight forward tutorial to get you started:
+To work with the Hadoop File System, you will either need to have it installed on your local machine or alternatively you may run it within a Hortonworks Hadoop Sandbox environment. I am working with a local installation of Hadoop on OS X, and if you're on a Mac and would like to install Hadoop and reproduce this project, here is a straight-forward tutorial to get you started:
 
 https://blog.petehouston.com/complete-guide-to-install-and-configure-apache-hadoop-3-on-macos/
 
 If you would like to reproduce this project without installing Hadoop on your local machine, here is a link to get you started with Hortonworks Hadoop:
 https://www.youtube.com/watch?v=735yx2Eak48
 
-The following insturctions assumes 
+The following assumes you are up and running with Hadoop.
+### Input file to HDFS
+We will first need to load our file into the Hadoop File System, as well as create the directories in which to access and write our MapReduce jobs. If you followed the OS X Hadoop tutorial above, you may have already created the 'input' directory, otherwise, create it now by running:
+```hdfs dfs -mkdir /input```
+
+While we are at it, we can create our output directory:
+```hdfs dfa -mkdir /output```
+
+We can confirm that we have successfully created our directories with:
+```hdfs dfs -ls /```
+
+Now that we have our working directories, we must add our data.csv file to HDFS. We can easily accomplish this with:
+```hdfs dfs -put data.csv /input```
+
+
+
