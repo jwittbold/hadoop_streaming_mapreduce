@@ -48,7 +48,7 @@ Our final result should be three records:
 
 Now that we have tested our MapReduce modules, we can run them as a streaming MapReduce job within Hadoop.
 
-## Using Hadoop
+# Using Hadoop
 To work with the Hadoop File System, you will either need to have it installed on your local machine or alternatively you may run it within a Hortonworks Hadoop Sandbox environment. I am working with a local installation of Hadoop on OS X, and if you're on a Mac and would like to install Hadoop and reproduce this project, here is a straight-forward tutorial to get you started:
 
 https://blog.petehouston.com/complete-guide-to-install-and-configure-apache-hadoop-3-on-macos/
