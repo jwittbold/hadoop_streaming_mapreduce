@@ -26,7 +26,7 @@ Our output should now only show four 'A' records:
 
 ![Reducer1 Output](/screenshots/reducer1_output.png)
 
-Now that we have our desired set of vehicle records, we will pipe these results to our next mapper, ```autoinc_mapper2.py``` which creates a composite key from each vehicle make and year, and a count for each record. We can test this by running:  
+Now that we have our desired set of vehicle records, we will pipe these results to our next mapper, ```autoinc_mapper2.py```, which creates a composite key from each vehicle make and year and a count for each record. We can test this by running:  
 
 
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py | python autoinc_mapper2.py | sort ```
