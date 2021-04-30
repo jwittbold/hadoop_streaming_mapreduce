@@ -103,7 +103,7 @@ As you can see, the final result is:
 This captures job execution from STDOUT and confirms that our MapReduce jobs have run successfully.  
 
 
-For a more verbose log, you can uncomment line 3 in ```vehichle_mapreduce.sh```  
+For a more verbose log you can uncomment line 3 in ```vehichle_mapreduce.sh```  
 
 This will send all STDOUT and STDERR to the created file ```job_log.txt```.  
 I have not included it here as it will reveal local file paths and usernames. 
