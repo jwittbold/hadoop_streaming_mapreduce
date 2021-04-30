@@ -6,7 +6,8 @@ The original schema of data.csv stored within HDFS:
 ![Vehicle Record Schema](/screenshots/vehicle_record_schema.png)
 
 Before we run the MapReduce jobs in HDFS we can test the output of our modules using a copy of data.csv stored within the same directory as our modules.  
-First ```autoinc_mapper1.py``` reads the lines contained within data.csv and maps the output as a key/value pair, with the vehicle VIN as the key and a tuple containing incident type, make, and year as the value. We can test this within within our terminal by running: 
+First ```autoinc_mapper1.py``` reads the lines contained within data.csv and maps the output as a key/value pair, with the vehicle VIN as the key and a tuple containing incident type, make, and year as the value. We can test this within within our terminal by running:  
+
 
 ```cat data.csv | python autoinc_mapper1.py | sort```
 
@@ -14,14 +15,16 @@ Our output should look like this:
 ![Mapper1 Output](/screenshots/mapper1_output.png)
 
 
-Once we have our initial set of desired vehicle records, we will pipe these records to our reducer ```autoinc_reducer1.py```, which will propagate vehicle make and year info into accident records 'A', and then limit our results to only accident records. We can test this by running the following: 
+Once we have our initial set of desired vehicle records, we will pipe these records to our reducer ```autoinc_reducer1.py```, which will propagate vehicle make and year info into accident records 'A', and then limit our results to only accident records. We can test this by running the following:  
+
 
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py```
 
 Our output should now only show four 'A' records:
 ![Reducer1 Output](/screenshots/reducer1_output.png)
 
-Now that we have our desired set of vehicle records, we will pipe these results to our next mapper, ```autoinc_mapper2.py``` which creates a composite key from each vehicle make and year, and a count for each record. We can test this by running:
+Now that we have our desired set of vehicle records, we will pipe these results to our next mapper, ```autoinc_mapper2.py``` which creates a composite key from each vehicle make and year, and a count for each record. We can test this by running:  
+
 
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py | python autoinc_mapper2.py | sort ```
 
@@ -30,7 +33,8 @@ The output will consist of four records:
 ![Mapper2 Output](/screenshots/mapper2_output.png)
 
 
-The final step is to pipe our results to ```autoinc_redcuer2.py``` which will read in our composite key and count, and return only results for unique keys while increasing the count for duplicate key occurences. We can test this by running:
+The final step is to pipe our results to ```autoinc_redcuer2.py``` which will read in our composite key and count, and return only results for unique keys while increasing the count for duplicate key occurences. We can test this by running:  
+
 ```cat data.csv | python autoinc_mapper1.py | sort | python autoinc_reducer1.py | python autoinc_mapper2.py | sort | python autoinc_reducer2.py | sort```
 
 Our final result should be three records:
